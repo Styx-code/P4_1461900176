@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use illuminate\Support\Facades\DB;
 
 class RakBukuController extends Controller
 {
@@ -13,8 +14,11 @@ class RakBukuController extends Controller
      */
     public function index()
     {
-        $rak_buku = \App\Models\rak_buku::All();
-        return view('rak0176', ['rak_buku' => $rak_buku]);
+        $rak_buku = DB::table('rak_buku')
+        ->join('buku', 'id.buku', '=', 'rak_buku.id_buku')
+        ->get();
+
+        return view('rak')->with('data', $rak_buku);
     }
 
     /**

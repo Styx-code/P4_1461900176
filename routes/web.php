@@ -20,6 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home0176');
 });
+
+// route export
+
+
+
+// route resource
 Route::resource('buku0176', BukuController::class);
 Route::resource('jenis0176', JenisBukuController::class);
 Route::resource('rak0176', RakBukuController::class);

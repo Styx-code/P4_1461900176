@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kategori Buku</title>
+    <title>Rak Buku</title>
     <style>
         table{
             border-collapse: collapse;
@@ -29,12 +29,25 @@
         <thead>
             <tr>
                 <th>No</th>
-                <th>Judul Buku</th>
-                <th>Kategori</th>
+                <th>Nama</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Opsi</th>
             </tr>
         </thead>
         <tbody>
-            
+            <?php $no=1; ?>
+            @foreach ($rak_buku as $r)
+            <tr>
+                <td>{{$no++}}</td>
+                <td>{{$r->judul}}</td>
+                <td>{{$r->jenis_buku}}</td>
+                <td>
+                    <a href="">Edit</a>
+                    <a href="">Hapus</a>
+                </td>
+            </tr>
+            @endforeach
         </tbody>
     </table>
     <h3>

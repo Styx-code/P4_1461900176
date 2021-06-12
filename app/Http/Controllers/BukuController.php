@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+
+
 class BukuController extends Controller
 {
     /**
@@ -15,7 +18,10 @@ class BukuController extends Controller
     {
         $buku = \App\Models\buku::All();
         return view('buku0176', ['buku' => $buku]);
+        
     }
+    
+
 
     /**
      * Show the form for creating a new resource.

@@ -21,7 +21,10 @@
             padding: 10px;
         }
         tr:nth-child(even) {background-color: darkgrey}
-        
+        a{
+            border: black;
+            padding-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -51,6 +54,7 @@
     </table>
     <h3>
         <a href="">Tambah Data</a>
+        <a href="{{url('/buku0176/excel')}}">Print</a>
     </h3>
 </body>
 </html>
