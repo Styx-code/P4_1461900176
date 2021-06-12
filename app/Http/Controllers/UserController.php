@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Exports\UserExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -13,8 +16,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = \App\Models\User::All();
+        $user = User::All();
         return view('user0176', ['user' => $user]);
+        
+    }
+    public function export()
+    {
+        return Excel::download(new UserExport, 'Data_14619000176.xlsx');
     }
 
     /**

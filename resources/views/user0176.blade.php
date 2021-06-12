@@ -21,7 +21,30 @@
             padding: 10px;
         }
         tr:nth-child(even) {background-color: darkgrey}
-        
+        p{
+
+            border: black;
+        }
+        .tombol{
+            background-color: green;
+            color: white;
+            padding: 4px 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .tombol:hover{
+            background-color: darkslategrey;
+            color: white;
+            text-decoration: none;
+            zoom: 1.05;
+        }
+        a{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -45,14 +68,16 @@
                 <td>{{$u->password}}</td>
                 <td>
                     <a href="">Edit</a>
+                    ~
                     <a href="">Hapus</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <h3>
-        <a href="">Tambah Data</a>
-    </h3>
+    <p>
+        <a class="tombol" href="">Tambah Data</a>
+        <a class="tombol" href="{{ url('user0176/export') }}" class="btn btn-success">Print</a>
+    </p>
 </body>
 </html>

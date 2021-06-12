@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\jenis_buku;
+use App\Exports\JenisExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 class JenisBukuController extends Controller
@@ -11,11 +14,18 @@ class JenisBukuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
-        $jenis_buku = \App\Models\jenis_buku::All();
-        return view('jenis0176', ['jenis_buku' => $jenis_buku]);
+        $jenis = jenis_buku::All();
+        return view('buku0176', ['buku' => $jenis]);
+        
     }
+    public function export()
+    {
+        return Excel::download(new JenisExport, 'Data_14619000176.xlsx');
+    }
+    
 
     /**
      * Show the form for creating a new resource.

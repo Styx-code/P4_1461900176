@@ -24,6 +24,11 @@ Route::get('/', function () {
 // route export
 Route::get('buku0176/export', [BukuController::class, 'export']);
 
+Route::get('jenis0176/export', [JenisBukuController::class, 'export']);
+
+Route::get('user0176/export', [UserController::class, 'export']);
+
+Route::get('rak0176/export', [RakController::class, 'export']);
 
 // route resource
 Route::resource('buku0176', BukuController::class);

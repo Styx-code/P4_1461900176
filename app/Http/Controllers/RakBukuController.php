@@ -14,11 +14,7 @@ class RakBukuController extends Controller
      */
     public function index()
     {
-        $rak_buku = DB::table('rak_buku')
-        ->join('buku', 'id.buku', '=', 'rak_buku.id_buku')
-        ->get();
-
-        return view('rak')->with('data', $rak_buku);
+        
     }
 
     /**
