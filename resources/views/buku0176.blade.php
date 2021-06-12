@@ -54,7 +54,7 @@
     </table>
     <h3>
         <a href="">Tambah Data</a>
-        <a href="{{url('/buku0176/excel')}}">Print</a>
+        <a href="{{ url('buku0176/export') }}" class="btn btn-success">Print</a>
     </h3>
 </body>
 </html>

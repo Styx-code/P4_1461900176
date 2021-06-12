@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 // route export
-
+Route::get('buku0176/export', [BukuController::class, 'export']);
 
 
 // route resource

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\buku;
+use App\Exports\BukuExport;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Http\Request;
 
 
@@ -16,9 +19,13 @@ class BukuController extends Controller
      */
     public function index()
     {
-        $buku = \App\Models\buku::All();
+        $buku = buku::All();
         return view('buku0176', ['buku' => $buku]);
         
+    }
+    public function export()
+    {
+        return Excel::download(new BukuExport, 'Data_14619000176.xlsx');
     }
     
 
