@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\BukuController;
+use App\Http\Controllers\JenisBukuController;
+use App\Http\Controllers\RakBukuController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +18,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home0176');
 });
+Route::resource('buku0176', BukuController::class);
+Route::resource('jenis0176', JenisBukuController::class);
+Route::resource('rak0176', RakBukuController::class);
+Route::resource('user0176', UserController::class);
